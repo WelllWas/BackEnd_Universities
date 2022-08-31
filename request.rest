@@ -1,0 +1,43 @@
+GET http://universities.hipolabs.com/search?country=uruguay
+###
+
+GET http://localhost:3000/universities?country=USA
+
+###
+GET http://localhost:3000/universities
+
+###
+
+GET http://localhost:3000/universities/630f4a1e13d9fc986ec366fd
+
+###
+
+POST http://localhost:3000/universities/register
+
+###
+POST http://localhost:3000/universities
+Content-Type: application/json
+
+{
+    "alpha_two_code": "BR",
+    "web_pages": ["http://www.cambridge.com", "http://www.cambridgeBR.com", "http://www.cambridgeUS.com"],
+    "name": "Universidade de Mogi das Cruzes",
+    "country": "Brazil",
+    "domains": ["www.Cambridge.com", "www.Cambridge.uni", "www.CambridgeUni.com"],
+    "state_province": "SP"
+}
+
+###
+
+PUT http://localhost:3000/universities/630f4a1e13d9fc986ec366fd
+Content-Type: application/json
+
+{
+    "web_pages": ["teste", "teste2", "teste3"],
+    "name": "Universidade Teste Alterar2",
+    "domains": ["www.Teste.com", "www.dokimí.com", "www.Prüfung.com"]
+}
+
+###
+
+DELETE http://localhost:3000/universities/630f4a1e13d9fc986ec366fd
