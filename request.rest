@@ -24,10 +24,10 @@ Content-Type: application/json
 
 {
     "alpha_two_code": "BR",
-    "web_pages": ["http://www.cambridge.com", "http://www.cambridgeBR.com", "http://www.cambridgeUS.com"],
+    "web_pages": ["http://www.Suzano.com", "http://www.suzanoBR.com", "http://www.suzanoUS.com"],
     "name": "Universidade de Suzano",
     "country": "Brazil",
-    "domains": ["www.Suzano.com", "www.Suzano.uni", "www.CambridgeUni.com"],
+    "domains": ["www.Suzano.com", "www.Suzano.uni", "www.SuzanoUni.com"],
     "state_province": "SP"
 }
 

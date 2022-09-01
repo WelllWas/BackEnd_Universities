@@ -1,8 +1,8 @@
 Para rodar:
 
-• Rodar "npm install" no terminal;
+• Rodar "npm install";
 
-• Rodar "npm run dev" no terminal;
+• Rodar "npm run dev";
 
 • Caso esteja rodando no VS Code, pode ser instalado a extensão REST Client, e utilizar as rotas criadas no arquivo request.rest como base, ou, caso seja utilizado o Postman, poderá usar como base as APIs referênciadas a seguir;
 
