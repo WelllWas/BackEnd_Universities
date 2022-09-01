@@ -20,10 +20,10 @@ class uniController{
         }
     }
 
-    async get(countryParam){
-        countryParam = countryParam || "";
+    async get(country, page){
+        page = parseInt(page) || 1;
         try{
-            let response = await this.service.get(countryParam);
+            let response = await this.service.get(country, page);
             return{
                 statusCode: response.statusCode,
                 body: response.body
@@ -84,6 +84,21 @@ class uniController{
     async delete(id){
         try{
             let response = await this.service.delete(id);
+            return{
+                statusCode: response.statusCode,
+                body: response.body
+            }
+        }catch(e){
+            return {
+                statusCode: e.status || 502,
+                body: e.message
+            }
+        }
+    }
+
+    async deleteAll(){
+        try{
+            let response = await this.service.deleteAll();
             return{
                 statusCode: response.statusCode,
                 body: response.body

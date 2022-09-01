@@ -16,9 +16,10 @@ const uniController = require('../Controllers/UniController')
 
     router.get('/universities', async (req, res) => {
         try {
-            const countryParam = req.query.country;
+            const page = req.query.page;
+            const country = req.query.country;
             const controller = new uniController();
-            const response = await controller.get(countryParam);
+            const response = await controller.get(country, page);
             res.status(response.statusCode).send(response.body);
         } catch (e) {
             const status = e.status || 502;
@@ -69,6 +70,17 @@ const uniController = require('../Controllers/UniController')
             const id = req.params.id;
             const controller = new uniController();
             const response = await controller.delete(id);
+            res.status(response.statusCode).send(response.body);
+        }catch(e){
+            const status = e.status || 502;
+            res.status(status).send(e.message);
+        }
+    })
+
+    router.delete('/universitiesDeleteAll', async (req, res) => {
+        try{
+            const controller = new uniController();
+            const response = await controller.deleteAll();
             res.status(response.statusCode).send(response.body);
         }catch(e){
             const status = e.status || 502;

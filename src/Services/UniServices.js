@@ -33,9 +33,9 @@ class uniServices{
         }
     }
 
-    async get(countryParam){
+    async get(country, page){
         try{
-            let response = await this.repository.get(countryParam);
+            let response = await this.repository.get(country, page);
             return{
                 statusCode: response.statusCode,
                 body: response.body
@@ -110,6 +110,21 @@ class uniServices{
     async delete(id){
         try{
             let response = await this.repository.delete(id);
+            return {
+                statusCode: response.statusCode,
+                body: response.body
+            }
+        }catch(e){
+            return {
+                statusCode: e.status || 502,
+                body: e.message
+            }
+        }
+    }
+
+    async deleteAll(){
+        try{
+            let response = await this.repository.deleteAll();
             return {
                 statusCode: response.statusCode,
                 body: response.body
