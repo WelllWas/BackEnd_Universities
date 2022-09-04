@@ -39,7 +39,7 @@ class uniRepository{
                     limit:    20
                 }
                 const data = await University.paginate({country: country}, options);
-                if(data.docs.length>1){
+                if(data.docs.length>0){
                     return{
                         statusCode: 200,
                         body: data
@@ -58,7 +58,7 @@ class uniRepository{
                     limit:    20
                 }
                 const data = await University.paginate({}, options);
-                if(data.docs.length>1){
+                if(data.docs.length>0){
                     return{
                         statusCode: 200,
                         body: data
